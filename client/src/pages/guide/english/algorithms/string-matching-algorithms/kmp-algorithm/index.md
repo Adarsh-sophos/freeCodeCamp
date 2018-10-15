@@ -49,6 +49,8 @@ How to use lps[] to decide next positions (or to know a number of characters to 
     -   From above two points, we can conclude that we do not need to match these lps[j-1] characters with txt[i-j…i-1] because we know that these characters will anyway match. Let us consider above example to understand this.
 <br>
 
+**Source** : [GeeksforGeeks](https://www.geeksforgeeks.org)
+
 **More Infromation :**
 - [kmp algorithm for pattern searching](https://www.geeksforgeeks.org/kmp-algorithm-for-pattern-searching/)
 - [Knuth–Morris–Pratt algorithm](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm)

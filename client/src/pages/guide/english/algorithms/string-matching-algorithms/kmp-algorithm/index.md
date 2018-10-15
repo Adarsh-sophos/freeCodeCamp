@@ -1,10 +1,10 @@
 # Knuth–Morris–Pratt Algorithm for Pattern Searching
 Pattern searching is an important problem in computer science. When we do search for a string in notepad/word file or browser or database, pattern searching algorithms are used to show the search results.
 
-**Problem :**
+### Problem :
 Given a text _txt[0..n-1]_ and a pattern _pat[0..m-1]_, write a function _search(char pat[], char txt[])_ that prints all occurrences of _pat[]_ in _txt[]_. You may assume that _n > m_.
 
-**Example :**
+### Example :
 ```
 Input:  txt[] =  "AABAACAADAABAABA"
         pat[] =  "AABA"
@@ -13,10 +13,10 @@ Output: Pattern found at index 0
         Pattern found at index 12
 ```
 
-**Idea :**
+### Idea :
 The basic idea behind KMP’s algorithm is: whenever we detect a mismatch (after some matches), we already know some of the characters in the text of the next window. We take advantage of this information to avoid matching the characters that we know will anyway match. Let us consider below example to understand this.
 
-**Preprocessing Pattern String :**
+### Preprocessing Pattern String :
 -   KMP algorithm preprocesses pat[] and constructs an auxiliary  **lps[]**  of size m (same as size of pattern) which is used to skip characters while matching.
 -   Name lps indicates **longest proper prefix** which is also suffix. A proper prefix is prefix with whole string  **not**  allowed. For example, prefixes of “ABC” are “”, “A”, “AB” and “ABC”. Proper prefixes are “”, “A” and “AB”. Suffixes of the string are “”, “C”, “BC” and “ABC”.
 -   We search for lps in sub-patterns. More clearly we focus on sub-strings of patterns that are either prefix and suffix.
@@ -27,7 +27,7 @@ The basic idea behind KMP’s algorithm is: whenever we detect a mismatch (after
 
 **Note :**  lps[i] could also be defined as longest prefix which is also proper suffix. We need to use properly at one place to make sure that the whole substring is not considered.
 
-**Examples of lps[] construction :**
+### Examples of lps[] construction :
 ```
 For the pattern “ABCDE”, 
 lps[] is [0, 0, 0, 0, 0]
@@ -49,6 +49,6 @@ How to use lps[] to decide next positions (or to know a number of characters to 
     -   From above two points, we can conclude that we do not need to match these lps[j-1] characters with txt[i-j…i-1] because we know that these characters will anyway match. Let us consider above example to understand this.
 <br>
 
-**More Infromation :**
+### More Infromation :
 - [kmp algorithm for pattern searching](https://www.geeksforgeeks.org/kmp-algorithm-for-pattern-searching/)
 - [Knuth–Morris–Pratt algorithm](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm)
